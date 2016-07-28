@@ -1,10 +1,13 @@
 {
   "name": "sh-input-text",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Text input field superhero theme",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "tmp": "webpack",
+    "ymp": "babel ./src --out-dir ./lib --source-maps --presets es2015,react --plugins babel-plugin-add-module-exports"
   },
   "repository": {
     "type": "git",
@@ -20,7 +23,12 @@
   ],
   "author": "Kevin <kevinbatchelor@gmail.com>",
   "license": "MIT",
-  "devDependencies":{
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
     "sh-core": "0.1.0"
+  },
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
   }
 }
