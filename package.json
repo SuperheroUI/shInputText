@@ -13,7 +13,10 @@
   "keywords": [
     "text",
     "input",
-    "field"
+    "field",
+    "superheroui",
+    "react",
+    "component"
   ],
   "author": "Kevin <kevinbatchelor@gmail.com>",
   "license": "MIT",
