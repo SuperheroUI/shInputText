@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-require('./steps.scss');
+// require('./steps.scss');
 
-export default class SetupProspects extends Component {
+export default class ShInputText extends Component {
 
   constructor(props) {
     super(props);
@@ -16,7 +16,7 @@ export default class SetupProspects extends Component {
   render() {
     return (
         <label>
-          <span class="label">this.props.label</span>
+          <span className="label">this.props.label</span>
           <input type="text"  placeholder="+" />
       </label>
     )
