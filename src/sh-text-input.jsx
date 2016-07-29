@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// require('./steps.scss');
+require('../src/sh-text-input.scss');
 
 export default class ShInputText extends Component {
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import ShInputText from '../lib/sh-text-input'
+import ShInputText from '../bin/sh-text-input'
 
 class App extends React.Component {
   render(){
