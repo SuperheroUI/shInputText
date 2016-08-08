@@ -1,20 +1,19 @@
 {
-  "name": "sh-input-text",
-  "version": "0.1.2",
-  "description": "Text input field superhero theme",
-  "main": "index.js",
+  "name": "sh-input-select",
+  "version": "0.1.0",
+  "description": "Select input box superhero theme",
+  "main": "./bin/sh-text-input.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
-    "tmp": "webpack",
-    "precompile": "babel ./src --out-dir ./bin --source-maps --presets es2015,react --plugins babel-plugin-add-module-exports"
+    "dev": "./node_modules/.bin/webpack -d --watch --config webpack.config.js",
+    "example": "./node_modules/.bin/webpack -d --watch --config webpack.example.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SuperheroUI/shInputText"
+    "url": "https://github.com/SuperheroUI/shSelectText"
   },
   "keywords": [
-    "text",
+    "select",
     "input",
     "field",
     "superheroui",
@@ -24,18 +23,23 @@
   "author": "Kevin <kevinbatchelor@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
     "css-loader": "^0.23.1",
     "file-loader": "^0.9.0",
     "node-sass": "^3.8.0",
+    "react-hot-loader": "^1.3.0",
     "sass-loader": "^4.0.0",
-    "sh-core": "0.1.0",
     "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7"
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1"
+    "lodash": "^4.14.1",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "sh-core": "^0.1.2"
   }
 }
