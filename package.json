@@ -2,7 +2,7 @@
   "name": "sh-input-text",
   "version": "0.1.3",
   "description": "Text input box superhero theme",
-  "main": "./bin/sh-text-input.js",
+  "main": "./bin/sh-input-text.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./node_modules/.bin/webpack -d --watch --config webpack.config.js",
