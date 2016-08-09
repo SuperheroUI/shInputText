@@ -1,7 +1,7 @@
 {
-  "name": "sh-input-select",
+  "name": "sh-input-text",
   "version": "0.1.0",
-  "description": "Select input box superhero theme",
+  "description": "Text input box superhero theme",
   "main": "./bin/sh-text-input.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SuperheroUI/shSelectText"
+    "url": "https://github.com/SuperheroUI/shTextText"
   },
   "keywords": [
-    "select",
+    "text",
     "input",
     "field",
     "superheroui",
