@@ -4,13 +4,13 @@
   "description": "Text input box superhero theme",
   "main": "./bin/sh-input-text.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/karma start",
     "dev": "./node_modules/.bin/webpack -d --watch --config webpack.config.js",
     "example": "./node_modules/.bin/webpack -d --watch --config webpack.example.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SuperheroUI/shTextText"
+    "url": "https://github.com/SuperheroUI/shInputText"
   },
   "keywords": [
     "text",
@@ -34,7 +34,17 @@
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "karma": "^1.1.1",
+    "karma-cli": "^1.0.1",
+    "karma-mocha": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "0.0.26",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.5.3",
+    "phantomjs-polyfill": "0.0.2",
+    "phantomjs-prebuilt": "^2.1.7"
   },
   "dependencies": {
     "lodash": "^4.14.1",
