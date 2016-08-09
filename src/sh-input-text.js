@@ -29,11 +29,11 @@ class ShInputText extends Component {
       this.state.placeholderText = 'Required Field';
       this.setState(this.state);
     }
-    console.log(this.props.required)
   }
 
   handleChange(event) {    
     this.setState({value: event.target.value});
+    this.props.onChange(event);
   };
   
   handleBlur(){
