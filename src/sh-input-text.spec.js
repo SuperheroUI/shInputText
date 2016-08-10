@@ -1,15 +1,20 @@
 import React from 'react';
 import expect from 'expect';
-import expectJSX from 'expect-jsx';
-expect.extend(expectJSX);
 
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 
-import Root from './sh-input-text';
+import ShInputText from './sh-input-text';
 
-describe('root', () => {
+describe('check to see if the component renders', () => {
   it('renders root component without crashing', () => {
-    let root = shallow(<Root />);
-    expect(root).toExist();
+    let textField = shallow(<ShInputText label="Example Pre Filled Data" value='some Value'></ShInputText>);
+    expect(textField).toExist();
+  });
+  it('allows us to set props', () => {
+    let textField = mount(<ShInputText label="Example Pre Filled Data" value='some Value'></ShInputText>);
+    
+    expect(textField.props().label).toEqual('Example Pre Filled Data');
+    expect(textField.props().value).toEqual('some Value');
+    textField.setProps({ label: 'foo' });
   });
 });

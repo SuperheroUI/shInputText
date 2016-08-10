@@ -6,11 +6,6 @@ module.exports = function (config) {
     singleRun: true,
     frameworks: [ 'mocha'],
     files: [
-      // Reference: https://www.npmjs.com/package/phantomjs-polyfill
-      // Needed because React.js requires bind and phantomjs does not support it
-      // 'node_modules/phantomjs-polyfill/bind-polyfill.js',
-      // 'node_modules/whatwg-fetch/fetch.js',
-      // 'node_modules/babel-polyfill/dist/polyfill.js',
       'src/**/*.spec.*'
     ],
     plugins: [

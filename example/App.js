@@ -41,8 +41,7 @@ class App extends React.Component {
   render() {
     return <div>
       <form name="test" onSubmit={this.handleSubmit}>
-        <ShInputText label="Example Pre Filled Data" value={this.state.formData.one}
-                     onChange={this.handleOneChange}></ShInputText>
+        <ShInputText label="Example Pre Filled Data" value={this.state.formData.one} onChange={this.handleOneChange}></ShInputText>
         <ShInputText label="Example With Required Field" value="" onChange={this.handleTwoChange} required></ShInputText>
         <ShInputText label="Example Text Three" value="" onChange={this.handleThreeChange}></ShInputText>
         <button type="submit">go</button>
