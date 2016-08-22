@@ -73,8 +73,10 @@ class ShInputText extends Component {
             <div className={this.state.classList}>
                 <label>
                     <span className="label">{this.props.label}</span>
-                    <input ref="input" type="text"
-                        {...other}
+                    <input ref="input"
+                           className="sh-text-input"
+                           type="text"
+                            {...other}
                            placeholder={this.state.placeholderText}
                            onChange={this.handleChange}
                            onFocus={this.handleFocus}
