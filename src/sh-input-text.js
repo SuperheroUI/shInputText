@@ -7,7 +7,8 @@ class ShInputText extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            classList: ['sh-input-text empty'],
+            value: '',
+            classList: 'sh-input-text empty',
             placeholderText: '+'
         };
 
@@ -21,7 +22,7 @@ class ShInputText extends Component {
             this.setState(
                 {
                     value: this.props.value,
-                    classList: ['sh-input-text']
+                    classList: 'sh-input-text'
                 }
             )
         }
@@ -30,11 +31,14 @@ class ShInputText extends Component {
             this.state.placeholderText = 'Required Field';
             this.setState(this.state);
         }
+        this.state.placeholderHolder = this.state.placeholderText;
     }
 
     handleChange(event) {
         this.setState({value: event.target.value});
-        this.props.onChange(event);
+        if(this.props.onChange){
+            this.props.onChange(event);
+        }
     };
 
 
@@ -43,6 +47,12 @@ class ShInputText extends Component {
             this.props.onFocus(event);
         }
         this.refs.input.select();
+
+        this.setState(
+            {
+                placeholderText: ''
+            }
+        );
     }
 
     handleBlur() {
@@ -52,7 +62,8 @@ class ShInputText extends Component {
         this.setState(
             {
                 value: this.state.value,
-                classList: ['sh-input-text']
+                placeholderText: this.state.placeholderHolder,
+                classList: 'sh-input-text'
             }
         );
 
@@ -60,7 +71,7 @@ class ShInputText extends Component {
             this.setState(
                 {
                     value: this.state.value,
-                    classList: ['sh-input-text empty']
+                    classList: 'sh-input-text empty'
                 }
             )
         }
@@ -70,7 +81,7 @@ class ShInputText extends Component {
         var {onFocus, onBlur, ...other} = this.props;
 
         return (
-            <div className={this.state.classList}>
+            <div className={this.props.className ? this.props.className +' '+this.state.classList : this.state.classList}>
                 <label>
                     <span className="label">{this.props.label}</span>
                     <input ref="input"
