@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import * as _ from 'lodash';
+import React from 'react';
+
 require('./sh-input-text.scss');
 
-class ShInputText extends Component {
+class ShInputText extends React.Component {
 
     constructor(props) {
         super(props);
