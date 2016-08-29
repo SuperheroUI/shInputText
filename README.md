@@ -1,4 +1,4 @@
-# SuperheroUI [![Build Status](https://travis-ci.org/SuperheroUI/shInputText.svg?branch=master)](https://travis-ci.org/SuperheroUI/shInputText) [![Coverage Status](https://coveralls.io/repos/github/SuperheroUI/shInputText/badge.svg)](https://coveralls.io/github/SuperheroUI/shInputText)
+# SuperheroUI [![Build Status](https://travis-ci.org/SuperheroUI/shInputText.svg?branch=master)](https://travis-ci.org/SuperheroUI/shInputText) [![Coverage Status](https://coveralls.io/repos/github/SuperheroUI/shInputText/badge.svg)](https://coveralls.io/github/SuperheroUI/shInputText) [![npm version](https://badge.fury.io/js/sh-input-text.svg)](https://badge.fury.io/js/sh-input-text)
 InsideSales.com React UI
 
 ## ShInputText
