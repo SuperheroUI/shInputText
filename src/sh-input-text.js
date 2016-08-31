@@ -24,11 +24,16 @@ class ShInputText extends React.Component {
         this.validate = this.validate.bind(this);
     }
 
-    validate() {
+    validate(onSubmit) {
+        if(onSubmit){
+            this.state.classList.shTouched = true;
+        }
         let rtn = {isValid: true};
-        if (this.props.required && this.state.value === '') {
-            this.state.classList.invalid = true;
-            this.setState(this.state);
+
+        if (this.props.required && this.state.value.trim() === '') {
+            this.state.classList.shInvalid = true;
+            var newState = _.clone(this.state);
+            this.setState(newState);
             rtn.isValid = false;
             rtn.msg = 'Required';
         }
@@ -75,39 +80,32 @@ class ShInputText extends React.Component {
         }
     };
 
-
     handleFocus(event) {
         if (this.props.onFocus) {
             this.props.onFocus(event);
         }
-        this.refs.input.select();
 
-        this.setState(
-            {
-                placeholderText: ''
-            }
-        );
+        this.state.classList.shTouched = true;
+        this.state.placeholderText = '';
+        var newState = _.clone(this.state);
+        this.refs.input.select();
+        this.setState(newState);
     };
 
     handleBlur() {
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
-        this.setState(
-            {
-                value: this.state.value.trim(),
-                placeholderText: this.state.placeholderHolder,
-                classList: {shInputText: true}
-            }
-        );
+
+        this.state.value = this.state.value;
+        this.state.placeholderText = this.state.placeholderHolder;
+        var setState = _.clone(this.state);
+        this.setState(setState);
 
         if (!this.state.value) {
-            this.setState(
-                {
-                    value: this.state.value,
-                    classList: {shInputText: true, empty: true}
-                }
-            )
+            this.state.empty = true;
+            var newState = _.clone(this.state);
+            this.setState(newState)
         }
     }
 

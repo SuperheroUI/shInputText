@@ -184,4 +184,17 @@ describe('root', function () {
         var root = TestUtils.renderIntoDocument(<ShInputText value={value} required />);
         ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(root).parentNode);
     });
+
+    it('should call set class to touched a form as been submitted by the shForm', function(){
+        let value = null;
+        let validator = {
+            register: _.noop,
+            unregister: _.noop,
+        };
+        spyOn(validator, 'unregister');
+        var root = TestUtils.renderIntoDocument(<ShInputText validator={validator} value={value} required />);
+        root.validate(true);
+        expect(root.state.classList.shTouched).toBe(true);
+
+    });
 });

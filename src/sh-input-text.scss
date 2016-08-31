@@ -74,9 +74,11 @@
 
 .sh-form {
     &.status-error {
-        .invalid {
-            input {
-                border: 1px solid $color-error;
+        .sh-invalid {
+            &.sh-touched {
+                input {
+                    border: 1px solid $color-error;
+                }
             }
         }
     }
