@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import ShInputText from '../bin/sh-input-text';
 import ShForm from 'sh-form';
-import ShSelect from 'sh-input-select';
 
 class App extends React.Component {
     constructor(props) {
