@@ -148,14 +148,16 @@ ShInputText.propTypes = {
     validator: React.PropTypes.object,
     value: React.PropTypes.any,
     onChange: React.PropTypes.func,
-    onFocus: React.PropTypes.func,
+    label: React.PropTypes.string,
+    required: React.PropTypes.bool,
 };
 
 ShInputText.defaultProps = {
     value: null,
     validator: null,
     onChange: _.noop,
-    onFocus: _.noop,
+    label: '',
+    required: false
 };
 
 export default ShInputText;
