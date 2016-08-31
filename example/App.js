@@ -41,7 +41,7 @@ class App extends React.Component {
 
     render() {
         return <div>
-            <ShForm name="test" onSubmit={this.handleSubmit}>
+            <ShForm onSubmit={this.handleSubmit}>
                 <ShInputText label="Example With Preset value" value={this.state.formData.one} onChange={this.handleOneChange} />
                 <ShInputText label="Example With Required Field" value="" onChange={this.handleTwoChange} required />
                 <ShInputText label="Example Text Three" className="spam" value="" onChange={this.handleThreeChange} />
