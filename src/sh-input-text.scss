@@ -31,6 +31,14 @@
         }
     }
 
+    &.sh-invalid {
+        &.sh-touched {
+            input {
+                border: 1px solid $color-error;
+            }
+        }
+    }
+
     input {
         position: absolute;
         top: 0;
@@ -68,18 +76,6 @@
 
         &::-webkit-input-placeholder {
             @include placeholder;
-        }
-    }
-}
-
-.sh-form {
-    &.status-error {
-        .sh-invalid {
-            &.sh-touched {
-                input {
-                    border: 1px solid $color-error;
-                }
-            }
         }
     }
 }

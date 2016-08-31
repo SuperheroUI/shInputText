@@ -30,13 +30,16 @@ class ShInputText extends React.Component {
         }
         let rtn = {isValid: true};
 
+        this.state.classList.shInvalid = false;
+
         if (this.props.required && this.state.value.trim() === '') {
             this.state.classList.shInvalid = true;
-            var newState = _.clone(this.state);
-            this.setState(newState);
+
             rtn.isValid = false;
             rtn.msg = 'Required';
         }
+        var newState = _.clone(this.state);
+        this.setState(newState);
         return rtn;
     };
 
@@ -73,6 +76,8 @@ class ShInputText extends React.Component {
         this.setState({value: event.target.value}, ()=> {
             if (this.props.validator) {
                 this.props.validator.validate()
+            } else {
+                this.validate();
             }
         });
         if (this.props.onChange) {
@@ -93,11 +98,11 @@ class ShInputText extends React.Component {
     };
 
     handleBlur() {
+        this.validate();
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
 
-        this.state.value = this.state.value;
         this.state.placeholderText = this.state.placeholderHolder;
         var setState = _.clone(this.state);
         this.setState(setState);
