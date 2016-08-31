@@ -142,11 +142,17 @@ class ShInputText extends React.Component {
 }
 
 ShInputText.propTypes = {
-    validator: React.PropTypes.object
+    validator: React.PropTypes.object,
+    value: React.PropTypes.any,
+    onChange: React.PropTypes.func,
+    onFocus: React.PropTypes.func,
 };
 
 ShInputText.defaultProps = {
-    validator: null
+    value: null,
+    validator: null,
+    onChange: _.noop,
+    onFocus: _.noop,
 };
 
 export default ShInputText;
