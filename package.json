@@ -1,6 +1,6 @@
 {
   "name": "sh-input-text",
-  "version": "0.1.11",
+  "version": "0.1.13",
   "description": "Text input box superhero theme",
   "main": "./bin/sh-input-text.js",
   "scripts": {

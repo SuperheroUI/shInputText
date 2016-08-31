@@ -1,7 +1,7 @@
 module.exports = {
     entry: './example/app.js',
     output: {
-        path: './example',
+        path: './bin',
         filename: 'example.js',
     },
     module: {
@@ -9,7 +9,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loaders: ['react-hot', 'babel-loader']
+                loaders: ['babel-loader']
             },
             {
                 test: /\.html$/,
