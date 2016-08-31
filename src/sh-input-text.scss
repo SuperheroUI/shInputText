@@ -52,7 +52,8 @@
         border-radius: $size-border-radius-small;
         background: transparent;
 
-        transition: background $transition-hover;
+        transition: background $transition-hover, box-shadow $transition-fast, border $transition-fast;
+        border: 1px solid $color-transparent;
 
         @include focus;
 
