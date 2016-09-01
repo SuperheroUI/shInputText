@@ -13,20 +13,20 @@ describe('root', function () {
     });
 
     it('input styles not be set to empty if there is a value', function () {
-        let value = '0';
-        let changeMe = () => {
-            value = 1;
-        };
-        var root = TestUtils.renderIntoDocument(<ShInputText value={value} onChange={changeMe}/>);
+        let value = '';
+
+        var root = TestUtils.renderIntoDocument(<ShInputText value={value} />);
         let rootNode = ReactDOM.findDOMNode(root);
         expect(root.state).toBeTruthy();
         let input = TestUtils.findRenderedDOMComponentWithClass(root, 'sh-text-input');
+        root.handleChange({target:{value:2}});
+
         TestUtils.Simulate.blur(input);
         expect(rootNode.classList.length).toBe(1)
     });
 
     it('handle having outside onBlur', function () {
-        let value = '0';
+        let value = '';
         let blurTest = 0;
         let onBlur = ()=> {
             blurTest = 1;
