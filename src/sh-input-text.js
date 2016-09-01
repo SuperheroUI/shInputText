@@ -102,16 +102,17 @@ class ShInputText extends React.Component {
         if (this.props.onBlur) {
             this.props.onBlur(event);
         }
+        var newState = _.clone(this.state);
 
-        this.state.placeholderText = this.state.placeholderHolder;
-        var setState = _.clone(this.state);
-        this.setState(setState);
+        newState.placeholderText = newState.placeholderHolder;
+        newState.classList.empty = false;
+
 
         if (!this.state.value) {
-            this.state.empty = true;
-            var newState = _.clone(this.state);
-            this.setState(newState)
+            newState.classList.empty = true;
         }
+
+        this.setState(newState)
     }
 
     render() {
