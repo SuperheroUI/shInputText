@@ -17,13 +17,20 @@ describe('root', function () {
 
         var root = TestUtils.renderIntoDocument(<ShInputText value={value} />);
         let rootNode = ReactDOM.findDOMNode(root);
-        expect(root.state).toBeTruthy();
         let input = TestUtils.findRenderedDOMComponentWithClass(root, 'sh-text-input');
         root.handleChange({target:{value:2}});
 
         TestUtils.Simulate.blur(input);
         expect(rootNode.classList.length).toBe(1)
     });
+
+    it('set classes from parent', function () {
+        let value = '';
+        var root = TestUtils.renderIntoDocument(<ShInputText className="spam" value={value} />);
+        let rootNode = ReactDOM.findDOMNode(root);
+        expect(rootNode.classList).toContain('spam');
+    });
+
 
     it('handle having outside onBlur', function () {
         let value = '';
