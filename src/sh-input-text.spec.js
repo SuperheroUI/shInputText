@@ -69,7 +69,8 @@ describe('root', function () {
         let rootNode = ReactDOM.findDOMNode(root);
         expect(root.state).toBeTruthy();
         let input = TestUtils.findRenderedDOMComponentWithClass(root, 'sh-text-input');
-        expect(input.placeholder).toBe('Required Field');
+        expect(root.state.requiredField.showRequired).toBe(true);
+        expect(input.placeholder).toBe('+');
     });
 
     it('input styles be set to empty if there is no value', function () {
