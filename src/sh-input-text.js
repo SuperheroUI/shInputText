@@ -16,8 +16,8 @@ class ShInputText extends React.Component {
             },
             placeholderText: '+',
             validStatus: 'unknown',
+            requiredField: {showRequired: false}
         };
-
         this.handleChange = this.handleChange.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
         this.handleFocus = this.handleFocus.bind(this);
@@ -25,7 +25,7 @@ class ShInputText extends React.Component {
     }
 
     validate(onSubmit) {
-        if(onSubmit){
+        if (onSubmit) {
             this.state.classList.shTouched = true;
         }
         let rtn = {isValid: true};
@@ -66,8 +66,7 @@ class ShInputText extends React.Component {
         }
 
         if (this.props.required) {
-            this.state.placeholderText = 'Required Field';
-            this.setState(this.state);
+            this.setState({requiredField: {showRequired: true}});
         }
         this.state.placeholderHolder = this.state.placeholderText;
     }
@@ -105,6 +104,7 @@ class ShInputText extends React.Component {
         var newState = _.clone(this.state);
         newState.placeholderText = newState.placeholderHolder;
         newState.classList.empty = !this.state.value;
+        newState.requiredField.showRequired =!this.state.value;
 
         this.setState(newState)
     }
@@ -123,6 +123,7 @@ class ShInputText extends React.Component {
                 className={this.props.className ? ShCore.getClassNames(this.state.classList) + ' ' + this.props.className : ShCore.getClassNames(this.state.classList)}>
                 <label>
                     <span className="label">{this.props.label}</span>
+                    <span className={"required-label " + ShCore.getClassNames(this.state.requiredField)}>required</span>
                     <input ref="input"
                            className="sh-text-input"
                            type="text"
