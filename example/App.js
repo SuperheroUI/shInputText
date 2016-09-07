@@ -8,7 +8,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             formData: {
-                one: 'Pre filled Text',
+                one: '',
                 two: '',
                 three: ''
             }

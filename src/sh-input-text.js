@@ -57,9 +57,10 @@ class ShInputText extends React.Component {
 
     componentWillReceiveProps(props) {
         if (!_.isUndefined(props.value) && !_.isEqual(props.value, this.state.value)) {
-            this.setState({
-                value: props.value
-            }, this.validate);
+            var newState = _.clone(this.state);
+            newState.classList.empty = !props.value;
+            newState.value = props.value;
+            this.setState(newState, this.validate);
         }
     }
 
