@@ -55,6 +55,14 @@ class ShInputText extends React.Component {
         }
     };
 
+    componentWillReceiveProps(props) {
+        if (!_.isUndefined(props.value) && !_.isEqual(props.value, this.state.value)) {
+            this.setState({
+                value: props.value
+            }, this.validate);
+        }
+    }
+
     componentDidMount() {
         if (this.props.value) {
             this.setState(
@@ -79,9 +87,7 @@ class ShInputText extends React.Component {
                 this.validate();
             }
         });
-        if (this.props.onChange) {
-            this.props.onChange(event);
-        }
+        this.props.onChange(event);
     };
 
     handleFocus(event) {
@@ -104,13 +110,14 @@ class ShInputText extends React.Component {
         var newState = _.clone(this.state);
         newState.placeholderText = newState.placeholderHolder;
         newState.classList.empty = !this.state.value;
-        newState.requiredField.showRequired =!this.state.value;
+        newState.requiredField.showRequired = !this.state.value;
 
         this.setState(newState)
     }
 
     render() {
         var {
+            value,
             validator,
             onFocus,
             onBlur,
@@ -149,7 +156,6 @@ ShInputText.propTypes = {
 };
 
 ShInputText.defaultProps = {
-    value: null,
     validator: null,
     onChange: _.noop,
     label: '',
