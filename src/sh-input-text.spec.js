@@ -203,6 +203,26 @@ describe('root', function () {
         var root = TestUtils.renderIntoDocument(<ShInputText validator={validator} value={value} required />);
         root.validate(true);
         expect(root.state.classList.shTouched).toBe(true);
+    });
 
+    it('changing props should update state', function(){
+        let value = '0';
+        var root = TestUtils.renderIntoDocument(<ShInputText value={value} required />);
+
+        var props = {
+            value: '0'
+        };
+        root.componentWillReceiveProps(props);
+        expect(root.state.value).toBe('0')
+    });
+
+    it('changing props should update state', function(){
+        let value = '1';
+        var root = TestUtils.renderIntoDocument(<ShInputText value={value} required />);
+        var props = {
+            value: '0'
+        };
+        root.componentWillReceiveProps(props);
+        expect(root.state.value).toBe('0')
     });
 });
