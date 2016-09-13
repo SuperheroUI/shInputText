@@ -73,6 +73,20 @@ describe('root', function () {
         expect(input.placeholder).toBe('+');
     });
 
+    it('the required label should not show up if the field is not required', function () {
+        let what = '';
+        let changeMe = () => {
+            value = 1;
+        };
+        var root = TestUtils.renderIntoDocument(<ShInputText value={what} onChange={changeMe}/>);
+        expect(root.state).toBeTruthy();
+        let input = TestUtils.findRenderedDOMComponentWithClass(root, 'sh-text-input');
+        TestUtils.Simulate.focus(input);
+        TestUtils.Simulate.blur(input);
+        expect(root.state.requiredField.showRequired).toBe(false);
+        expect(input.placeholder).toBe('+');
+    });
+
     it('input styles be set to empty if there is no value', function () {
         var root = TestUtils.renderIntoDocument(<ShInputText  />);
         let rootNode = ReactDOM.findDOMNode(root);
