@@ -111,9 +111,10 @@ class ShInputText extends React.Component {
         var newState = _.clone(this.state);
         newState.placeholderText = newState.placeholderHolder;
         newState.classList.empty = !this.state.value;
-        newState.requiredField.showRequired = !this.state.value;
-
-        this.setState(newState)
+        if (this.state.value && this.props.required) {
+            newState.requiredField.showRequired = false;
+        }
+        this.setState(newState);
     }
 
     render() {
