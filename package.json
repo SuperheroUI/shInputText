@@ -1,6 +1,6 @@
 {
   "name": "sh-input-text",
-  "version": "0.1.22",
+  "version": "0.2.0",
   "description": "Text input box superhero theme",
   "main": "./bin/sh-input-text.js",
   "scripts": {
@@ -46,12 +46,13 @@
     "sass-loader": "^4.0.0",
     "sh-form": "^0.1.4",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.1"
   },
   "dependencies": {
     "lodash": "^4.14.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "sh-core": "^0.2.0"
+    "sh-core": "^0.3.0"
   }
 }

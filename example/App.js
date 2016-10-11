@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import ShInputText from '../bin/sh-input-text';
 import ShForm from 'sh-form';
+require('../node_modules/sh-core/bin/main.css');
 
 class App extends React.Component {
     constructor(props) {
