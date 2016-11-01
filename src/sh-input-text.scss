@@ -87,9 +87,11 @@
         right: 4px;
         top: 4px;
         color:$color-line4;
+        transition: opacity $transition;
 
         &.show-required {
             opacity: 1;
+            transition: opacity $transition;
         }
     }
 }
