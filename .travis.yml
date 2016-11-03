@@ -8,7 +8,6 @@ after_success:
 notifications:
   email:
     recipients:
-      - hbillings@insidesales.com
       - kbatchelor@insidesales.com
     on_success: never
     on_failure: change

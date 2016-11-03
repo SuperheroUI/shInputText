@@ -103,7 +103,7 @@ class ShInputText extends React.Component {
         this.setState(newState);
     };
 
-    handleBlur() {
+    handleBlur(event) {
         this.validate();
         if (this.props.onBlur) {
             this.props.onBlur(event);
