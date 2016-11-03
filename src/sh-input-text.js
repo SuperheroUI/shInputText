@@ -99,7 +99,6 @@ class ShInputText extends React.Component {
         this.state.classList.shTouched = true;
         this.state.placeholderText = '';
         var newState = _.clone(this.state);
-        this.refs.input.select();
         this.setState(newState);
     };
 
@@ -131,8 +130,7 @@ class ShInputText extends React.Component {
                 <label>
                     <span className="label">{this.props.label}</span>
                     <span className={"required-label " + ShCore.getClassNames(this.state.requiredField)}>required</span>
-                    <input ref="input"
-                           className="sh-text-input"
+                    <input className="sh-text-input"
                            type="text"
                            {...other}
                            placeholder={this.state.placeholderText}
