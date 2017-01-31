@@ -6,6 +6,8 @@
     width: 100%;
 
     label {
+        border: 1px solid $color-box-background3;
+        border-radius: $size-border-radius-small;
         position: relative;
         display: block;
         height: 50px;
@@ -86,7 +88,7 @@
         position: absolute;
         right: 4px;
         top: 4px;
-        color:$color-line4;
+        color: $color-line4;
         transition: opacity $transition;
 
         &.show-required {
